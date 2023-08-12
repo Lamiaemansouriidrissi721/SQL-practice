@@ -1,0 +1,21 @@
+#PROJECT create table and sort
+CREATE TABLE stores (id INTEGER PRIMARY KEY   , items TEXT ,Category TEXT,price INTEGER , Theme TEXT);
+INSERT INTO stores VALUES (1, "Blue T-Shirt", "clothing", 20, "fashion");
+INSERT INTO stores VALUES (2, "Running Shoes", "footwear", 15, "sport");
+INSERT INTO stores VALUES (3, "Skateboard", "sport", 8, "lifestyle");
+INSERT INTO stores VALUES (4, "Red Dress", "clothing", 10, "fashion");
+INSERT INTO stores VALUES (5, "Basketball", "sport", 5, "recreation");
+INSERT INTO stores VALUES (6, "Sunglasses", "accessories", 12, "fashion");
+INSERT INTO stores VALUES (7, "Backpack", "accessories", 18, "lifestyle");
+INSERT INTO stores VALUES (8, "Baseball Cap", "headwear", 7, "fashion");
+INSERT INTO stores VALUES (9, "Yoga Mat", "sport", 6, "fitness");
+INSERT INTO stores VALUES (10, "Smartphone", "electronics", 25, "technology");
+INSERT INTO stores VALUES (11, "Wireless Earbuds", "electronics", 30, "technology");
+INSERT INTO stores VALUES (12, "Gaming Console", "electronics", 40, "entertainment");
+INSERT INTO stores VALUES (13, "Dumbbell Set", "fitness", 22, "sport");
+INSERT INTO stores VALUES (14, "Hiking Boots", "footwear", 28, "outdoor");
+INSERT INTO stores VALUES (15, "Wristwatch", "accessories", 14, "fashion");
+SELECT items, price
+FROM stores
+WHERE price > 10
+AND price IN (SELECT MAX(price) FROM stores WHERE price > 10 GROUP BY price);
